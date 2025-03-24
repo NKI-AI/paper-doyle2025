@@ -1,0 +1,27 @@
+defaults:
+  - meta_data_orig.yaml
+  - target_data.yaml
+  - cv_split.yaml
+  - data_selection.yaml
+  - block1_aperio_including_philips_extra_slides.yaml@Block1_Aperio
+  - block1_p1000_including_philips_extra_slides.yaml@Block1_P1000
+
+dataset_name: "Precision_NKI_89_05"
+name: "Precision_NKI_89_05_Block1_Aperio_P1000"
+separate_metrics_per_ds: true
+monitor_ds: "Aperio"
+
+
+#Todo this does not work., also we include extra slides.
+Block1_Aperio:
+  slide_mapping:
+    meta_data_cols_orig:
+      slide_id: "svs_filename"
+    metadata_fn: "Precision_Split_incl_extra.csv"
+Block1_P1000:
+  slide_mapping:
+    meta_data_cols_orig:
+      slide_id: "mrxs_filename"
+      metadata_fn: "Precision_Split_incl_extra.csv"
+
+

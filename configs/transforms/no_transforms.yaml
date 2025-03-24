@@ -1,0 +1,5 @@
+name: no_transforms
+train:
+  - _target_: torchvision.transforms.ToTensor
+no_train:
+  - _target_: torchvision.transforms.ToTensor

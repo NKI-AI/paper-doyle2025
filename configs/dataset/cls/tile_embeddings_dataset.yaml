@@ -1,0 +1,15 @@
+_target_: drop.data.drop_dataset.Dataset
+_partial_: true
+input_type: "embeddings_tiles"
+data_cols: ${data.data_cols}
+y_col: ${data.data_sel_params.target}
+tiling: ${tiling}
+cache_path: true
+extra_features: []
+derived_data_path: ${paths.derived_data}
+scratch_data_path: ${paths.data}
+transforms: ${pre_transforms}
+embeddings_dir: ${pretrain.pretrain_mode}
+use_embeddings: true
+debug: ${debug}
+

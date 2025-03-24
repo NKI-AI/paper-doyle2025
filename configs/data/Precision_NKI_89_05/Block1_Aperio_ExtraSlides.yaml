@@ -1,0 +1,12 @@
+defaults:
+  - target_data.yaml
+  - data_selection.yaml
+  - cv_split.yaml
+  - block1_aperio_including_philips_extra_slides.yaml
+# need to redefine as the previous interpolation with data does not work anymore with the list of datasets
+dataset_name: "Precision_NKI_89_05"
+name: "NKI05_Block1_Aperio"
+separate_metrics_per_ds: false
+monitor_ds: ""
+slide_mapping:
+  metadata_fn: "Precision_Split_incl_extra.csv"

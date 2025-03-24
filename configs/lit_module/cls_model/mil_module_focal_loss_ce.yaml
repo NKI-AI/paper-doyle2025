@@ -1,0 +1,10 @@
+_target_: drop.lit_modules.cls.mil_module.RegionMILModule
+loss_fn:
+  _target_: drop.lit_modules.losses.FocalLossCE
+  alpha: 0.25
+  gamma: 2.0
+weight_decay: 0.0005
+lr: 0.0005
+optimizer: "Adam"
+scheduler: ${lr_scheduler}
+monitor: "val/loss"

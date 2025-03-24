@@ -1,0 +1,11 @@
+defaults:
+  - target_data.yaml
+  - data_selection.yaml
+  - cv_split.yaml
+  - block1_p1000_including_philips_extra_slides.yaml
+dataset_name: "Precision_NKI_89_05"
+name: "NKI05_Block1_P1000"
+separate_metrics_per_ds: false
+monitor_ds: ""
+slide_mapping:
+  metadata_fn: "Precision_Split_incl_extra.csv"

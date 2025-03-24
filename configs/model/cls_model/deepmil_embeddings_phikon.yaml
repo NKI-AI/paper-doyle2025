@@ -1,0 +1,29 @@
+# this is using the Owkin settings for Phikon
+_target_: drop.models.cls.region_cls_models.RegionDeepMILPhikon
+encoder:
+  name: ${pretrain.pretrain_mode}
+  feature_extractor:
+    embed_dim: 768
+fc1:
+  _target_: drop.models.model_components.LinearBlock
+  _partial_: true
+  out_features: 128
+  num_groups:
+  dropout_rate: 0.0
+  act_layer:
+    _target_: torch.nn.Sigmoid
+attention:
+  _target_: drop.models.model_components.GatedAttention
+  _partial_: true
+  d_model: 128  # in owkin repo, needs to match output from fc1
+decoder:
+  _target_: drop.models.model_components.MLP
+  _partial_: true
+  hidden_unit_sizes: [128, 64]
+  num_groups:
+  num_classes: 1
+  norm: false
+  dropout_rate: 0.0
+  act_layer:
+    _target_: torch.nn.ReLU  # check if owkin use ReLU or Sigmoid
+

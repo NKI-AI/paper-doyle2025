@@ -1,0 +1,30 @@
+defaults:
+  - model_checkpoint.yaml@modelcheckpoint_all
+  - model_checkpoint.yaml@modelcheckpoint_bestauc
+  - model_checkpoint.yaml@modelcheckpoint_bestloss
+
+modelcheckpoint_all:
+  filename: "{epoch}"
+  dirpath: ${hydra:runtime.output_dir}/${paths.checkpoints_dir}
+  every_n_epochs: 1
+  save_last: true
+  auto_insert_metric_name: true
+  save_top_k: -1
+
+modelcheckpoint_bestauc:
+  filename: "best_auc"
+  dirpath: ${hydra:runtime.output_dir}/${paths.checkpoints_dir}
+  save_top_k: 1
+  monitor: val${data.monitor_ds}/best_auc
+  mode: "max"
+
+modelcheckpoint_bestloss:
+  filename: "best_loss"
+  dirpath: ${hydra:runtime.output_dir}/${paths.checkpoints_dir}
+  save_top_k: 1
+  monitor: "val/loss"
+  mode: "min"
+
+
+
+

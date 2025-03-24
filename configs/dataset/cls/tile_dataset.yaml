@@ -1,0 +1,19 @@
+_target_: drop.data.drop_dataset.Dataset
+_partial_: true  # split is defined in datamodule
+y_col: ${data.data_sel_params.target}
+data_cols: ${data.data_cols}
+input_type: "tiles"
+transforms: ${pre_transforms}
+tiling: ${tiling}
+derived_data_path: ${paths.derived_data}
+scratch_data_path: ${paths.data}
+extra_features: []
+regions_cols:
+cache_path: true
+embeddings_dir: ${pretrain.pretrain_mode}  # set for saving embeddings, otherwise can be None
+use_embeddings: false
+icc_profile: false
+debug: ${debug}
+make_h5: false
+use_h5: true
+

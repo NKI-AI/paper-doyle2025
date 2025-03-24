@@ -1,0 +1,10 @@
+defaults:
+  - default.yaml
+  - target_data.yaml
+  - data_selection.yaml
+  - cv_split.yaml
+  - sloane.yaml
+dataset_name: "Sloane"  #!
+name: "Sloane"
+separate_metrics_per_ds: true # doing this so it shows up as testSloane/auc etc
+monitor_ds: "Sloane"

@@ -1,0 +1,24 @@
+defaults:
+  - _self_   #this is necessary to ensure new hydra behaviour of v 1.1 Here the params in this config file can override the defaults.
+  - paths: default
+  - hydra: default
+  - data: Precision_NKI_89_05/Block1_Aperio_ExtraSlides
+  - regions_prep: none
+  - data_prep: default
+  - model: ml_model/random_forest.yaml
+  - kfold_metrics_collector: default
+  - logger: default
+  - experiment: default
+  - task: null
+
+#- visualisation: default
+local: ${oc.env:LOCAL}
+hydra_runtime_output_dir: ${hydra:runtime.output_dir}/
+hydra_job: ${hydra:job}
+hydra_sweep: ${hydra:sweep}
+hydra_logging: ${hydra:logging}
+hydra_output_subdir: ${hydra:output_subdir}
+hydra_run_dir: ${hydra:run.dir}
+
+#ensemble: false
+debug: false

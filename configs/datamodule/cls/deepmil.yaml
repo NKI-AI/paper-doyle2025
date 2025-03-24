@@ -1,0 +1,9 @@
+_target_: drop.data.datamodule.DataModule
+batch_size: 1
+num_workers: 8
+sampler: ${sampler}
+sample_col: ${data.data_cols.meta.tissue_number_blockid} #may depend on the sampler
+collate_fn: drop.data.datamodule.deepmil_collate_fn
+
+
+

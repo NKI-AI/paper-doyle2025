@@ -1,0 +1,7 @@
+name: "StepLR"
+scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  _partial_: true
+  step_size: 1
+  gamma: 0.8
+#  verbose: true

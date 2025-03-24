@@ -1,0 +1,29 @@
+name: macenko
+train:
+  - _target_: drop.transforms.image_normalization.MacenkoNormalizer
+    he_reference: torch.tensor([[[0.5626, 0.2159], [0.7201, 0.8012], [0.4062, 0.5581]]])
+    max_con_reference: torch.tensor([[1.9705, 1.0308]])
+    return_stains: false
+    probability: 1.0
+    requested_mpp: 16.0
+    cache_path: ${paths.dataset_derived}
+  - _target_: drop.transforms.transformations.RandomOrthogonalRotate
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+  - _target_: drop.transforms.transformations.ZeroPadTensor
+    size: ${tiling.outsize}
+no_train:
+  - _target_: drop.transforms.image_normalization.MacenkoNormalizer
+    he_reference: torch.tensor([[[0.5626, 0.2159], [0.7201, 0.8012], [0.4062, 0.5581]]])
+    max_con_reference: torch.tensor([[1.9705, 1.0308]])
+    return_stains: false
+    probability: 1.0
+    requested_mpp: 16.0
+    cache_path: ${paths.dataset_derived}
+#  - _target_: torchvision.transforms.ToTensor # Is already tensor
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+  - _target_: drop.transforms.transformations.ZeroPadTensor
+    size: ${tiling.outsize}

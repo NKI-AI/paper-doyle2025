@@ -1,0 +1,14 @@
+data_sel_params:
+  target:
+  exclude_deceased: false
+  exclude_endocrine_therapy: true
+  exclude_radiotherapy: true
+  event: [ "iIBC" ]  #could also be iDCIS or cIBC or cDCIS #currently not used
+  exclude_philips: false
+  drop_nas_in_cols:  # ['er', 'her2', 'age_diagnose', 'grade', 'p16_score', 'cox2_score', 'p53_percentage']  #
+  cutoff_years: false
+data_sel_strategy:
+  slides:
+    strategy: "all"  #chose from ["all", "every_4_samples", "every_4_samples", "use_local_slides", "random_subsampling"]
+  regions:
+    strategy: "all" #chose from ["random_subsampling", value, " , value]  #None for no regions - could be

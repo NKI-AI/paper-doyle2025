@@ -1,0 +1,7 @@
+name: "ReduceLROnPleateau"
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  factor: 0.1
+  patience: 3
+  verbose: 1

@@ -1,0 +1,26 @@
+defaults:
+  - default.yaml
+meta_data_cols_orig:
+  slide_id: "Sloane ID" #!
+  patient_id: "PRECISION_ID"  #!
+  iibc: "first_subseq_event"  #!
+  tissue_number_blockid: "PRECISION_ID"
+  split: "split"
+  er: "er_rec_exc"
+  her2: "her2_ish_exc"
+  pr: "pr_rec_exc"
+  age: "age_diagnose"
+  grade: "grade_dcis_exc"
+matched_metadata_fn_out: "matched_metadata.csv"
+slide_mapping:
+  subdirs: ["Sloane/"]
+  img_ext: "ndpi"
+  slidescore_mapping_fn: slidescore_mapping.txt
+  metadata_fn: "Sloane_meta.csv"
+  meta_data_cols_orig: ${data.meta_data_cols_orig}
+task_data_prep:
+  subdirs: ["Sloane/"]
+  meta_data_cols_orig: ${data.meta_data_cols_orig}
+data_sel_params:
+  exclude_scottish: true
+cv_splitter:

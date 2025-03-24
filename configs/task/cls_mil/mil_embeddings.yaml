@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - override /data: Precision_NKI_89_05/Block1_Aperio_ExtraSlides.yaml
+  - override /transforms: shape_augs.yaml
+  - override /norms: imagenet.yaml
+  - override /tiling: cls.yaml
+  - override /dataset: cls/tile_embeddings_dataset.yaml
+  - override /sampler: dfsubset_weighted_batchsampler.yaml
+  - override /datamodule: cls/default.yaml
+  - override /pretrain: ibotvit.yaml
+  - override /model: cls_model/mil_owkin_embeddings.yaml
+  - override /lit_module: cls_model/mil_module.yaml
+  - override /trainer: cls_trainer.yaml
+
+# reproducibility
+random_seed: 42
+enforce_deterministic: false
+# general task
+task:
+  name: "Classification"
+  output_dir: "MIL_logs/"
+  experiment_name: "tiles"
+

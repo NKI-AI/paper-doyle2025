@@ -1,0 +1,19 @@
+# use together with collate_fn function for deepmil
+name: imagebag_batchsampler
+input_type: image_batches
+no_eval_per_epoch: 1
+subsample: 120 #subsample could be same as batch_size
+train:
+  _target_: drop.data.samplers.NewImageBatchSampler
+  _partial_: true
+  no_eval_per_epoch: ${sampler.no_eval_per_epoch}
+  m_images: 1
+  n_samples: ${sampler.subsample}
+  shuffle: true
+no_train:
+  _target_: drop.data.samplers.NewImageBatchSampler
+  _partial_: true
+  no_eval_per_epoch: ${sampler.no_eval_per_epoch}
+  m_images: 1
+  n_samples: 3000
+  shuffle: true

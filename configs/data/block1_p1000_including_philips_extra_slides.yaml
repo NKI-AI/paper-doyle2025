@@ -1,0 +1,15 @@
+defaults:
+  - meta_data_orig_precision.yaml
+  - default.yaml
+meta_data_cols_orig:
+  slide_id: "mrxs_filename"
+data_sel_params:
+  exclude_philips: false
+slide_mapping:
+  subdirs: ["Precision_NKI_89_05/Block1/datasets/P1000/"]
+  img_ext: "mrxs"
+  slidescore_mapping_fn: slidescore_mapping.txt
+  meta_data_cols_orig: ${data.meta_data_cols_orig}
+task_data_prep:
+  subdirs: ["Precision_NKI_89_05/Block1/datasets/P1000/"]
+  meta_data_cols_orig: ${data.meta_data_cols_orig}

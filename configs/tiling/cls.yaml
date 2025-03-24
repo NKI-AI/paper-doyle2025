@@ -1,0 +1,11 @@
+region_mpp:
+  - 1.0
+discard_negatives: False
+region_size: [[512,512]]
+tile_overlap_x: 0
+tile_overlap_y: 0
+tile_mode: "skip"
+crop: false # if true, crops the image to the boundaries of the WSI, if false zero padding
+only_square: true
+foreground_percentage_threshold: 0.3 # 0.05
+outsize: 512

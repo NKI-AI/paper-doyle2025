@@ -1,0 +1,4 @@
+_target_: lifelines.CoxPHFitter
+alpha: 0.05
+penalizer: 0.0
+l1_ratio: 0.0

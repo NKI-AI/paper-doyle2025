@@ -1,0 +1,31 @@
+train:
+  _target_: drop.lit_modules.cls.metrics_tracker.MetricsTrackerContainer
+  stage: "train"
+  server_cols: ${data.data_cols.server}
+  separate_metrics_per_ds: false
+  dirpath: null
+  store_region_level_results: false
+  store_slide_level_results: true
+  bin_prob_cutoff: false
+val:
+  _target_: drop.lit_modules.cls.metrics_tracker.MetricsTrackerContainer
+  stage: "val"
+  server_cols: ${data.data_cols.server}
+  separate_metrics_per_ds: ${data.separate_metrics_per_ds}
+  dirpath: null
+  store_region_level_results: true
+  store_slide_level_results: true
+  bin_prob_cutoff: false
+test:
+  _target_: drop.lit_modules.cls.metrics_tracker.MetricsTrackerContainer
+  stage: "test"
+  server_cols: ${data.data_cols.server}
+  separate_metrics_per_ds: ${data.separate_metrics_per_ds}
+  dirpath: null
+  store_region_level_results: true
+  store_slide_level_results: true
+  ensemble: ${experiment.ensemble}
+  train_without_val: ${experiment.train_without_val}
+  bin_prob_cutoff: false
+
+

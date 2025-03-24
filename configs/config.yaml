@@ -1,0 +1,41 @@
+defaults:
+  - _self_   #this is necessary to ensure new hydra behaviour of v 1.1 Here the params in this config file can override the defaults.
+  - paths: default
+  - hydra: default
+  - regions_prep: none
+  - data: Precision_NKI_89_05/Block1_Aperio_ExtraSlides
+  - data_prep: default
+  - dataset: null
+  - sampler: dfsubset_weighted_batchsampler
+  - datamodule: cls/default
+  - tiling: cls
+  - pre_transforms: default
+  - transforms: shape_augs_gpu
+  - norms: imagenet
+  - visualisation: default
+  - pretrain: hissl
+  - model: cls_model/mil_model
+  - lr_scheduler: step_lr
+  - metrics_trackers: default
+  - lit_module: cls_model/mil_module
+  - kfold_metrics_collector: default
+  - callbacks: default
+  - logger: default
+  - trainer: cls_trainer
+  - experiment: default
+  - detectron2: null
+  - task: null
+
+local: ${oc.env:LOCAL}
+
+hydra_runtime_output_dir: ${hydra:runtime.output_dir}/
+
+hydra_job: ${hydra:job}
+hydra_sweep: ${hydra:sweep}
+hydra_logging: ${hydra:logging}
+hydra_output_subdir: ${hydra:output_subdir}
+hydra_run_dir: ${hydra:run.dir}
+
+ensemble: false
+debug: false
+create_dataset_intermediaries: false

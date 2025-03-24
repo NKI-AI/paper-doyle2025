@@ -1,0 +1,53 @@
+# root
+project: ${oc.env:project_dir}
+# path to output directory, created dynamically by hydra
+# path generation pattern is specified in `configs/hydra/default.yaml`
+train_dataset: "Precision_NKI_89_05" # so that the path to which the outputs for other test datasets is the original train datset
+experiment_dir: ${paths.project}${task.output_dir}${paths.train_dataset}/${task.experiment_name}/
+# check is this modified if we change experiment name
+#experiment_dir: ${hydra:sweep.dir} #${hydra:sweep.subdir}
+
+# loggers
+logger_output: ${paths.experiment_dir}logger_logs/
+#pytorch lightning logs
+lightning_dir: "lightning_logs/"
+checkpoints_dir: "checkpoints/"
+metrics_dir: "metrics/"
+
+# data paths
+#Could even reflect organisation with hierarchical storing.
+project_data: ${oc.env:project_data_dir}
+orig_data: ${oc.env:orig_data_dir}
+derived_data: ${oc.env:derived_data_dir}
+data: ${oc.env:data_dir}
+dataset: ${paths.project_data}${data.dataset_name}/
+task: ${paths.dataset}${task.name}/
+
+
+dataset_derived: ${paths.derived_data}${data.dataset_name}/  # used by macenko
+# outputs
+cached_regions: ${paths.derived_data}${data.dataset_name}/cached_regions/
+viz: ${paths.dataset}visualisation/
+regions: ${paths.project_data}${paths.det.regions_dir}
+
+
+det:
+  tile_dir: "detection_data/duct_detection_tiling_20210708_1024_2mpp/"
+  tile_path: ${paths.task}${paths.det.tile_dir}
+  labels_dir: "gt_bboxes_nki/"
+  annotations_dir: ${paths.dataset}${task.name}${paths.det.labels_dir}
+  #Path to Json file containing the splits to be used in this experiment. Each split is a dictionary with the index of the split as key and a dictionary as value.
+  #This value contains the keys train", "val", and "test" sets made up of tiled WSI directory names present in data_dir.
+  kfolds_file: "duct_detection_5_folds.json"
+  kfolds_path: ${paths.task}${paths.det.kfolds_file}
+  regions_dir: "bbox_predictions/"
+#det:
+#  visualise_tiles_with_preds: false #not used right now
+#  post_process_only: true # If false, then tile predictions csv is overwritten
+#  viz_dir: ${oc.env:SLOANE_viz_dir} #
+#  tile_dir: "/mnt/archive/projectdata/drop/data_proc/duct_detection_tiling_20210708_1024_2mpp/"
+#  annotations_dir: ${oc.env:SLOANE_bbox_labels_dir} #
+#  #Path to Json file containing the splits to be used in this experiment. Each split is a dictionary with the index of the split as key and a dictionary as value.
+#  #This value contains the keys train", "val", and "test" sets made up of tiled WSI directory names present in data_dir.
+#  kfolds_path: ${oc.env:PRECISION_kfolds_path_ducts}
+#

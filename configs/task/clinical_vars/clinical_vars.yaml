@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - override /data: Precision_NKI_89_05/Block1_Aperio_ExtraSlides.yaml
+  - override /model: ml_model/random_forest.yaml
+# reproducibility
+random_seed: 42
+enforce_deterministic: false
+# general task
+experiment:
+  load_pretrain_weights: false
+task:
+  name: "Classification"
+  output_dir: "MIL_logs/"
+  experiment_name: "clinical_vars"
+clinical_vars_type: "basic"
+load_img_model_preds: false

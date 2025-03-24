@@ -1,0 +1,11 @@
+pretrain_mode: hissl
+method: "moco"   #chose from swav, moco, dino  #or name ss_method
+epoch: 200
+init: imagenet # or scratch  or imagenet-with_moco or transforms_imagenet(used imagenet instead of data_proc specific normalization) (could also use ciga, but haven't done it)
+#Structure of naming is: backbone, size, ssl_method, ssl_init, epoch
+# not sure if they are d2 format - think not
+ssl_ckp_vissl_dir: "/projects/drop/pretrain_models/vissl_models/" # was input_dir=~/project/hissl/third_party/vissl/checkpoints/${MODEL}
+ssl_torch_d2_ckpt_dir: "pretrain_models/converted_vissl_models_to_d2_torch/"  # i believe the folder has the torch and d2 versions of the vissl models
+#augmentation, normalisation - hyperparameters
+#todo I need to rename all the directories and models so I can properly specify the models
+ # most of the models are only in d2_format, then use _d2 and models are converted and saved as torch automatically.

@@ -1,0 +1,5 @@
+pretrain_mode: r18_imagenet
+ssl_ckpt_dir: /home/s.doyle/hissl/third_party/vissl/checkpoints/  # input_dir=~/project/hissl/third_party/vissl/checkpoints/${MODEL}
+ssl_d2_ckpt_dir: /mnt/archive/projectdata/drop/pretrain_models/  #output_dir=/mnt/archive/projectdata/drop/models/${MODEL}
+ssl_method: 'resnet18_imagenet_pretrained'
+ssl_model: 'resnet18_imagenet_pretrained'  #todo doesnt work completely yet

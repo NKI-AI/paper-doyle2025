@@ -1,0 +1,15 @@
+name: only_normalisation
+train:
+  - _target_: torchvision.transforms.ToTensor
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+  - _target_: drop.transforms.transformations.ZeroPadTensor
+    size: ${tiling.outsize}
+no_train:
+  - _target_: torchvision.transforms.ToTensor
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+  - _target_: drop.transforms.transformations.ZeroPadTensor
+    size: ${tiling.outsize}

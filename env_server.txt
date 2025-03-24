@@ -1,0 +1,10 @@
+LOCAL=FALSE
+home_dir="/home/user/project/"
+data_dir="/processing/user/data/"
+orig_data_dir="/data/"
+derived_data_dir="/data/"
+project_data_dir="/projects/drop/"
+project_dir="/projects/drop/"
+MLFLOW_TRACKING_URI=file:///home/user/to_mlflow_outputs/
+
+

@@ -1,0 +1,5 @@
+pretrain_mode: r50_multi_task
+ssl_ckpt_dir: /home/s.doyle/hissl/third_party/vissl/checkpoints/  # input_dir=~/project/hissl/third_party/vissl/checkpoints/${MODEL}
+ssl_d2_ckpt_dir: /mnt/archive/projectdata/drop/ssl_models/  #output_dir=/mnt/archive/projectdata/drop/models/${MODEL}
+ssl_method: 'resnet50_multitask'
+ssl_model: 'resnet50_multitask'  # is a d2_model, needs to be converted to torch, or try the pth.tar model

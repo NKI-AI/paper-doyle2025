@@ -1,0 +1,14 @@
+defaults:
+  - meta_data_orig_precision.yaml
+  - default.yaml
+data_sel_params:
+  exclude_philips: false
+  exclude_deceased: false
+slide_mapping:
+  subdirs: ["Precision_NKI_89_05/Block1/datasets/Aperio/"]
+  img_ext: "svs"
+  slidescore_mapping_fn: slidescore_mapping_block1_aperio.txt
+  meta_data_cols_orig: ${data.meta_data_cols_orig}
+task_data_prep:
+  subdirs:  ["Precision_NKI_89_05/Block1/datasets/Aperio/"]
+  meta_data_cols_orig: ${data.meta_data_cols_orig}

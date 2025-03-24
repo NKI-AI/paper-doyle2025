@@ -1,0 +1,11 @@
+#data preprocessing pipeline
+_target_: drop.data_proc.main_data_preprocess.DataPrep
+data_cfg: ${data}
+data_fn: "data_mapping.json"
+task_dir: ${paths.task}
+# data setup
+construct_dataset: false
+input_regions: false
+# data analysis
+analyse_split: false
+analyse_folds: false

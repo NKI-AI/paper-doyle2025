@@ -1,0 +1,9 @@
+cv_splitter:
+  _target_: drop.data_proc.cv_split_creation.MIL_CVSplitter
+  output_dir: ${paths.task}
+  cv_split_fn: "cv_slide_mapping.json"
+  cv_params:
+    strategy: "StratifiedGroupKFold"
+    kfolds: ${experiment.kfolds}  # if set to none, then no cv split will be created
+    stratify_on: ${data.data_sel_params.target}
+    group_on: ${data.data_cols.meta.tissue_number_blockid}

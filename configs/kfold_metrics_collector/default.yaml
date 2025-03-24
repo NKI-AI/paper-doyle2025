@@ -1,0 +1,12 @@
+val:
+  _target_: drop.tools.overall_metrics.MetricsCollectorFolds
+  stage: "val"
+  out_dir: ${hydra:runtime.output_dir}/${paths.metrics_dir}
+test:
+  _target_: drop.tools.overall_metrics.MetricsCollectorFolds
+  stage: "test"
+  data_name: ${data.name}
+  out_dir: ${hydra:runtime.output_dir}/${paths.metrics_dir}
+  ensemble: ${experiment.ensemble}
+  train_without_val: ${experiment.train_without_val}
+

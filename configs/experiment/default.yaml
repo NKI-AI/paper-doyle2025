@@ -1,0 +1,20 @@
+#experiment setup
+_target_: drop.engine.experiment.Experiment
+out_dir: ${hydra:runtime.output_dir}/
+paths_cfg: ${paths}
+kfolds: 3
+ensemble: false
+train_without_val: false
+# model
+use_specific_folds: null
+load_pretrain_weights: true
+resume_from_ckpt: false
+resume_ckpt: 'last' # or the name of the checkpoint (usually last or epoch123) with file extension .ckpt
+eval_ckpt: 'best_loss'  # or best or specific epoch with file extension .ckpt
+eval_fold: 0
+# mode
+train: true
+test: true
+inference: false
+val_only: false
+visualise: false

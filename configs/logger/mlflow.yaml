@@ -1,0 +1,11 @@
+# https://mlflow.org
+mlflow:
+  _target_: pytorch_lightning.loggers.mlflow.MLFlowLogger
+  experiment_name: ${task.experiment_name}
+  tracking_uri: ${logger.mlflow_dir} # run `mlflow ui` command inside the `logs/mlflow/` dir to open the UI ${paths.experiment_dir}${paths.lightning_dir}/mlflow/mlruns
+  tags: null
+  save_dir: ${logger.mlflow_dir}
+  prefix: null
+  artifact_location: null
+  run_name: ""
+#  run_id:  # The run identifier of the experiment. If not provided, a new run is started.

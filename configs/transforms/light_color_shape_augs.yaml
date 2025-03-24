@@ -1,0 +1,19 @@
+name: light_color_shape_augs
+train:
+  - _target_: drop.transforms.transformations.RandomColorAugmentation
+    brightness_jitter_amount: 0.1
+    contrast_jitter_amount: 0.1
+    saturation_jitter_amount: 0.1
+    hue_jitter_amount: 0.1
+    gaussian_noise_amount: 0.0
+    augmentation_probability: 0.5
+  - _target_: torchvision.transforms.ToTensor
+  - _target_: drop.transforms.custom_transforms.RandomShapeAugment
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+no_train:
+  - _target_: torchvision.transforms.ToTensor
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}

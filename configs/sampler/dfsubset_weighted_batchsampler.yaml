@@ -1,0 +1,13 @@
+name: weighted_random
+no_eval_per_epoch: 1
+train:
+  _target_: drop.data.samplers.DataFrameSubsetWeightedRandomBatchSampler
+  _partial_: true
+  batch_size: ${datamodule.batch_size}
+  drop_last: true
+  no_eval_per_epoch: ${sampler.no_eval_per_epoch}
+no_train:
+  _target_: drop.data.samplers.DataFrameSequentialBatchSampler
+  _partial_: true
+  batch_size: ${datamodule.batch_size}
+  drop_last: true

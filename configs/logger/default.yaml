@@ -1,0 +1,5 @@
+defaults:
+  - mlflow.yaml
+  - csv.yaml
+  - tensorboard.yaml
+mlflow_dir: "file:///home/s.doyle/to_mlflow_outputs_rhpc/"

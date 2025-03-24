@@ -1,0 +1,16 @@
+_target_: drop.models.cls.region_cls_models.RegionMIL
+encoder:
+  _target_: drop.models.model_components.ResNetEncoder
+  resnet_arch: "resnet18"
+  conv_blocks: 2
+  keep_fc: false
+  freeze_layer_names: [] #list of layer/block indices. Layers 0-3 are the input conv, 4-7 are the conv blocks, 8 is avg pool
+  dropout_rate: 0.0
+decoder:
+  _target_: drop.models.model_components.MLP
+  _partial_: true
+  hidden_unit_sizes: [] # example [512, 256] for additional hidden layers in head.
+  num_groups: 32
+  dropout_rate: 0.0
+  num_classes: 2
+extra_features:

@@ -1,0 +1,23 @@
+# @package _global_
+# this is using the Okwin settings for Phikon
+defaults:
+  - override /data: Precision_NKI_89_05/Block1_Aperio_ExtraSlides.yaml
+  - override /transforms: none_embeddings.yaml
+  - override /norms: imagenet.yaml
+  - override /tiling: cls.yaml
+  - override /dataset: cls/tile_embeddings_dataset.yaml
+  - override /sampler: image_batchsampler.yaml
+  - override /datamodule: cls/deepmil.yaml
+  - override /pretrain: ibotvit.yaml
+  - override /model: cls_model/deepmil_embeddings_phikon
+  - override /lit_module: cls_model/mil_module.yaml
+  - override /trainer: cls_trainer.yaml
+
+# reproducibility
+random_seed: 42
+enforce_deterministic: false
+# general task
+task:
+  name: "Classification"
+  output_dir: "MIL_logs/"
+  experiment_name: "tiles"

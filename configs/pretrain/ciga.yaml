@@ -1,0 +1,6 @@
+pretrain_mode: ciga
+ssl_ckpt_dir: /home/s.doyle/hissl/third_party/vissl/checkpoints/  # input_dir=~/project/hissl/third_party/vissl/checkpoints/${MODEL}
+ssl_d2_ckpt_dir: /mnt/archive/projectdata/drop/ssl_models/  #output_dir=/mnt/archive/projectdata/drop/models/${MODEL}
+ssl_method: 'resnet18_ciga'
+ssl_model: 'tenpercent_resnet18_magic'  #model with pre-activation
+

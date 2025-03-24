@@ -1,0 +1,22 @@
+data_cols:
+  server:
+    name: "imageName"
+    path: "slide_path"
+    slidescore_id: 'imageID'
+    mask: "mask"
+    subdir: "subdir"
+  meta:
+    slide_id: "slide_id"
+    patient_id: "patient_id"
+    iibc: "outcome"
+    split: "split"
+    tissue_number_blockid: "tissue_number_blockid"
+    er: "er"
+    her2: "her2"
+    pr: "pr"
+    age: "age_diagnose"
+    grade: "grade"
+    p16: "p16"
+    cox2: "cox2"
+    p53: "p53"
+    ki67: "ki67"

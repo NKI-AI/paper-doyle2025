@@ -1,0 +1,13 @@
+name: hed_strong_norm
+train:
+  - _target_: drop.transforms.hed_transform.HEDColorAugmentation
+    p: 1.0
+    scale_sigma: 0.2  # HED-light 0.05, HED-strong 0.2 --> 0.2 does not seems strong
+    bias_sigma: 0.2   # HED-light 0.05, HED-strong 0.2
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+no_train:
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}

@@ -1,0 +1,13 @@
+_target_: catboost.CatBoostRegressor
+iterations: 1000
+learning_rate: 0.03
+depth: 6
+l2_leaf_reg: 3.0
+bagging_temperature: 1.0
+random_strength: 1.0
+loss_function: RMSE
+verbose: 0
+early_stopping_rounds:
+
+
+

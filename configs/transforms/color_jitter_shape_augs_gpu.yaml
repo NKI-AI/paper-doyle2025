@@ -1,0 +1,22 @@
+name: very_light_color_shape_augs_gpu
+train:
+  - _target_: kornia.augmentation.ColorJiggle
+    p: 0.5
+    brightness: 0.05
+    contrast: 0.05
+    saturation: 0.05
+    hue: 0.05
+  - _target_: kornia.augmentation.RandomHorizontalFlip
+    p: 0.5
+  - _target_: kornia.augmentation.RandomVerticalFlip
+    p: 0.5
+#  - _target_: kornia.augmentation.RandomRotation
+#    degrees: 90.0
+#    p: 0.5
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}
+no_train:
+  - _target_: drop.transforms.transformations.Normalize
+    mean: ${norms.mean}
+    std: ${norms.std}

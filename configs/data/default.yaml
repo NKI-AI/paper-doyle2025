@@ -1,0 +1,30 @@
+slide_mapping:
+  _target_: drop.data_proc.server_slide_mapping.SlideMapper
+  dataset_name: ${data.dataset_name}
+  orig_data_dir: ${paths.orig_data}
+  derived_data_dir: ${paths.derived_data}
+  data_dir: ${paths.data}
+  subdirs: null
+  img_ext: null
+  dataset_dir: ${paths.dataset}
+  metadata_fn: null
+  slidescore_mapping_fn: null
+  server_id_slide_mapping_fn: "servername_path_id_mappping.csv"
+  server_cols: ${data.data_cols.server}
+  matched_metadata_fn_out: ${data.matched_metadata_fn_out}  #dataset_dir is appended
+  meta_data_cols_orig: null
+regions_prep: ${regions_prep}
+task_data_prep:
+  _target_: drop.data_proc.task_data_selection.TaskDataPrepper
+  _partial_: true
+  dataset_name: ${data.dataset_name}
+  data_name: ${data.name}
+  task_data_fn: "task_slide_mapping.json"
+  task_dir: ${paths.task}
+  meta_data_cols_orig: null
+  matched_metadata_path: ${paths.dataset}${data.matched_metadata_fn_out}  #was slide_mapping.dataset_dir (paths.dataset)
+  data_cols: ${data.data_cols}
+  data_sel_params: # ${data.data_sel_params}  importing this works, but they cannot be modified, therefore using parital instanitation
+  data_sel_strategy: ${data.data_sel_strategy}
+
+

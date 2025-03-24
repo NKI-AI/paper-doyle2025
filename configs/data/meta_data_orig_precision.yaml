@@ -1,0 +1,17 @@
+# had to define these things here. also done in single datasets - would be better if we didnt do this. #todo
+meta_data_cols_orig:
+  slide_id: "svs_filename"
+  patient_id: "ppid"
+  iibc: "first_subseq_event"
+  split: "split_non_rt_only"
+  tissue_number_blockid: "tissue_number_blockid"
+  er: "er"
+  her2: "her2"
+  pr: "pr"
+  age: "age_diagnose"
+  grade: "grade"
+  p16: "p16_conclusion"
+  cox2: "cox2_score"
+  p53: "p53_percentage"
+  ki67: "ki67_category"
+matched_metadata_fn_out: "avail_slides_ssid_mask_metadata_matched.csv"

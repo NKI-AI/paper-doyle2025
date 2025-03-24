@@ -1,0 +1,25 @@
+metrics:
+  epoch:
+    _target_: torchmetrics.MaxMetric
+  auc:
+    _target_: torchmetrics.AUROC
+    pos_label: 1
+    task: "binary"
+  f1:
+    _target_: torchmetrics.F1Score
+    task: "binary"
+  best_auc:
+    _target_: torchmetrics.MaxMetric
+  best_f1:
+    _target_: torchmetrics.MaxMetric
+  specificity:
+    _target_: torchmetrics.Specificity
+    task: "binary"
+  sensitivity:
+    _target_: torchmetrics.Recall
+    task: "binary"
+  npr:
+    _target_: torchmetrics.MaxMetric
+  loss:
+    _target_: torchmetrics.MeanMetric
+

@@ -1,0 +1,10 @@
+_target_: drop.data.datamodule.DataModule
+batch_size: null
+num_workers: 8
+sampler: ${sampler}
+sample_col: ${data.data_cols.meta.tissue_number_blockid}
+collate_fn: null
+
+
+
+

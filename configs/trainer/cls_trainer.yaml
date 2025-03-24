@@ -1,0 +1,8 @@
+_target_: pytorch_lightning.Trainer
+accelerator: "gpu"
+devices: 1
+max_epochs: 2
+gradient_clip_val:
+
+
+

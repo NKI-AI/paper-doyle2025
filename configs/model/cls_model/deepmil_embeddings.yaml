@@ -1,0 +1,24 @@
+_target_: drop.models.cls.region_cls_models.RegionDeepMIL
+encoder:
+  name: ${pretrain.pretrain_mode}
+  feature_extractor:
+    embed_dim: 768
+fc1:
+  _target_: drop.models.model_components.LinearBlock
+  _partial_: true
+  out_features: 512
+  num_groups: 32
+  dropout_rate: 0.2
+fc2:
+  _target_: drop.models.model_components.LinearBlock
+  _partial_: true
+  out_features: 512
+  num_groups: 32
+  dropout_rate: 0.2
+decoder:
+  _target_: drop.models.model_components.AttentionClassificationHead
+  _partial_: true
+  hidden_features: 128
+  num_classes: 2
+  attention_heads: 1
+  attention_bias: true
