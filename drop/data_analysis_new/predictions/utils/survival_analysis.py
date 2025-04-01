@@ -6,6 +6,7 @@ from scipy import stats
 from lifelines import KaplanMeierFitter, CoxPHFitter
 from lifelines.utils import concordance_index
 from lifelines.statistics import logrank_test
+from lifelines.plotting import add_at_risk_counts
 import itertools
 from .custom_at_risk_group import add_at_risk_counts_custom
 from .formatting_utils import format_pvalue
@@ -38,6 +39,24 @@ def perform_statistical_test(group_outcomes_list, normality, var_equality):
         logging.info("don tuse t test, using Mann Whitney U test instead")
         statistic, p_value = stats.mannwhitneyu(*group_outcomes_list)
     return p_value
+
+def calculate_surprise_value(pvalue):
+    """
+    Calculate the surprise value (Shannon information) from a given p-value.
+
+    Parameters:
+    pvalue (float): The probability (p-value) (between 0 and 1).
+
+    Returns:
+    float: The surprise value corresponding to the p-value.
+    """
+    if pvalue <= 0 or pvalue > 1:
+        raise ValueError("P-value must be between 0 (exclusive) and 1 (inclusive).")
+
+    # Calculate the surprise value using Shannon's formula
+    surprise_value = -np.log2(pvalue)
+
+    return surprise_value
 
 def get_survivorship(df, y_true_col="outcome"):
     survivorship = {}
@@ -99,9 +118,6 @@ def make_kaplan_meier_plot(data, var_name, output_dir, y_true_col="outcome", y_p
             # in old matched_data, vital status has not yet changed the signs = 1 means dead
             group_data['vital_status_at_risk'] = group_data.apply(lambda row: row['vital_status'] if row[y_true_col] == 0 else 0, axis=1)
         try:
-
-            from lifelines.plotting import add_at_risk_counts
-
             kmf = KaplanMeierFitter()
             kmf.fit(group_data['time_to_event'], event_observed=group_data[y_true_col], label=group)
             kmf.plot(ax=ax, color=None)  # Let the color be automatically assigned

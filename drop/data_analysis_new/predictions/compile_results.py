@@ -222,7 +222,6 @@ def process_acc_results(save_path, data_name, years ):
         # Your processing logic here
         print(f"Processing metric: {metric_type}")
         df = read_acc_results(save_path, csv_file, data_name, years)
-        print(df)
         # Save the results as they are - for the k-fold outer cross validation
         df_single_runs = process_single_run_results(df, metric_type)
         df_single_runs_path = f"{save_path}{metric_type}{data_name}_cutoff_years{years}.csv"

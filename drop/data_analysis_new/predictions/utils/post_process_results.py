@@ -3,7 +3,7 @@ import pandas as pd
 
 from drop.data_analysis_new.predictions.utils import format_pvalue, get_out_cols, get_keep_cols
 from drop.data_analysis_new.predictions.utils import calculate_surprise_value
-
+from drop.data_analysis_new.predictions.utils.pool_outer_splits import *
 
 # used by analyse_predictions
 def post_process_results(df):

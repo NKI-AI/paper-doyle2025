@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da84eff9-72aa-4a91-850b-bf08a2b8245f" name="Default Changelist" comment="" />
+    <list default="true" id="da84eff9-72aa-4a91-850b-bf08a2b8245f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/compile_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/compile_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/slide_prediction_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/slide_prediction_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/post_process_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/post_process_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/survival_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/survival_analysis.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +23,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JupyterTrust" id="b857f864-737d-4a0d-a2cc-ecbc54d39a4b" />
   <component name="ProjectId" id="2u2wGWbYfpgK5LEM0huKTrh3BK8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +36,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -57,6 +71,8 @@
       <workItem from="1741459885304" duration="10750000" />
       <workItem from="1742044465246" duration="12291000" />
       <workItem from="1742114470220" duration="27603000" />
+      <workItem from="1742833662571" duration="4826000" />
+      <workItem from="1743510543739" duration="397000" />
     </task>
     <servers />
   </component>
@@ -68,13 +84,16 @@
       <screen x="0" y="0" width="2480" height="1440" />
     </state>
     <state x="1021" y="479" key="FileChooserDialogImpl/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742115387422" />
-    <state x="949" y="549" key="com.intellij.ide.util.TipDialog" timestamp="1742114473973">
-      <screen x="0" y="0" width="2480" height="1440" />
-    </state>
-    <state x="949" y="549" key="com.intellij.ide.util.TipDialog/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742114473973" />
-    <state x="-1438" y="290" width="586" height="595" key="find.popup" timestamp="1742464197772">
+    <state x="-1186" y="447" key="com.intellij.ide.util.TipDialog" timestamp="1743510567655">
       <screen x="-1920" y="0" width="1920" height="1170" />
     </state>
+    <state x="-1461" y="887" key="com.intellij.ide.util.TipDialog/-1920.612.1200.720/0.0.2480.1440@-1920.612.1200.720" timestamp="1742833685659" />
+    <state x="949" y="549" key="com.intellij.ide.util.TipDialog/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742114473973" />
+    <state x="-1186" y="447" key="com.intellij.ide.util.TipDialog/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@-1920.0.1920.1170" timestamp="1743510567655" />
+    <state x="-1619" y="790" width="591" height="488" key="find.popup" timestamp="1742834614570">
+      <screen x="-1920" y="612" width="1200" height="720" />
+    </state>
+    <state x="-1619" y="790" width="591" height="488" key="find.popup/-1920.612.1200.720/0.0.2480.1440@-1920.612.1200.720" timestamp="1742834614570" />
     <state x="946" y="354" width="588" height="732" key="find.popup/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742120432681" />
     <state x="-1438" y="290" width="586" height="595" key="find.popup/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@-1920.0.1920.1170" timestamp="1742464197772" />
     <state x="301" y="178" width="588" height="488" key="find.popup/0.0.1200.720@0.0.1200.720" timestamp="1742378229900" />

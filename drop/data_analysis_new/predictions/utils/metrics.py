@@ -28,23 +28,6 @@ def proportion_CI(successes, total, confidence=0.95):
 
     return lower_bound, upper_bound
 
-def calculate_surprise_value(pvalue):
-    """
-    Calculate the surprise value (Shannon information) from a given p-value.
-
-    Parameters:
-    pvalue (float): The probability (p-value) (between 0 and 1).
-
-    Returns:
-    float: The surprise value corresponding to the p-value.
-    """
-    if pvalue <= 0 or pvalue > 1:
-        raise ValueError("P-value must be between 0 (exclusive) and 1 (inclusive).")
-
-    # Calculate the surprise value using Shannon's formula
-    surprise_value = -np.log2(pvalue)
-
-    return surprise_value
 
 
 def get_tpr_fpr(tp, tn, fp, fn):

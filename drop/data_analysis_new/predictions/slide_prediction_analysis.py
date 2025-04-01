@@ -1,9 +1,11 @@
 import pandas as pd
 import os
 import logging
-
+import numpy as np
+from drop.data_analysis_new.predictions.utils.metrics import *
 import drop.data_analysis_new.predictions.utils.survival_analysis as sa
 import drop.data_proc.metadata_selection as ms
+from drop.data_analysis_new.predictions.utils.analysis_utils import get_threshold_for_max_metric, plot_roc_auc
 
 
 def calculate_metrics(merged_df, y_true_col, y_pred_col, stage):
@@ -49,7 +51,7 @@ def do_survivalpd_analysis(stage, survival_pd, outcome_col, run_name, plot_path,
     log_rank_pvalue = sa.log_rank_test(survival_pd, outcome_col)
     if stage == "test" and survival_pd['group'].nunique() > 1:
         hazards_ratio, hr_pvalue, hr_lower, hr_upper = sa.calculate_hazards_ratio(survival_pd, y_true_col=outcome_col)
-        hr_svalue = calculate_surprise_value(hr_pvalue)
+        hr_svalue = sa.calculate_surprise_value(hr_pvalue)
 
     else:
         hazards_ratio, hr_pvalue, hr_lower, hr_upper = np.NaN, np.NaN, np.NaN, np.NaN
