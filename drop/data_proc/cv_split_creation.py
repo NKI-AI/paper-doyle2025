@@ -80,7 +80,8 @@ class MIL_CVSplitter:
         elif isinstance(self.stratify_on, str) and self.stratify_on != '':
             targets = cv_df[self.stratify_on].to_list()
         else:
-            targets = None
+            logging.warning("No stratification target used!")
+            targets = np.zeros(len(cv_df), dtype=int)
 
         if isinstance(self.group_on, str) and self.group_on != '':
             groups = cv_df[self.group_on].to_list()

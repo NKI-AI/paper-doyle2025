@@ -84,13 +84,6 @@ class DataPrep:
         logging.info(data_df)
         self.json_saver.save_selected_data(self.data_params, "data", data_df.to_dict())
 
-        if self.analyse_split:
-            from drop.data_analysis_new.meta_data.analyse_splits_per_risk_group import analyse_data_splits
-            analyse_data_splits(data_df,
-                              stratify_on= self.cv_splitter.stratify_on,
-                              split_col=dataset_cfg.meta_data_cols_orig.split,  # will contain outer split number: split_non_rt_only$OUTER_SPLIT
-                              data_sel_params = self.data_sel_params
-                              )
 
         folds_df = None
         if self.cv_splitter:
@@ -104,7 +97,7 @@ class DataPrep:
             logging.info(folds_df)
 
         if self.analyse_folds:
-            from drop.data_analysis_new.meta_data.analyse_splits_per_risk_group import call_folds_analysis
+            from drop.data_analysis_new.meta_data_old_public.analyse_splits_per_risk_group import call_folds_analysis
             call_folds_analysis(
                 folds_df,
                 data_df,

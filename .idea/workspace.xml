@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da84eff9-72aa-4a91-850b-bf08a2b8245f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/READ.me" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/analyse_splits_per_group.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/get_patient_characteristics_table_biomarker.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/get_patients_characteristics_table_drop.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/utils/utils_characteristics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/experiment/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/experiment/default.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/analyse_splits_per_risk_group.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/make_project_data_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/make_project_data_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/patient_characteristics_outer_splits_and_folds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/patient_characteristics_tables_overall.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/patient_characteristics_tables_overall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/utils/metadata_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/utils/metadata_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/meta_data/utils/utils_outer_splits_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/analyse_predictions.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/analyse_predictions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/compile_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/compile_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/slide_prediction_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/slide_prediction_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/formatting_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/formatting_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/post_process_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/post_process_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/survival_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_analysis_new/predictions/utils/survival_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_proc/cv_split_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_proc/cv_split_creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drop/data_proc/main_data_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/drop/data_proc/main_data_preprocess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/drop/data_analysis_new" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,15 +58,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\scripts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new\meta_data\utils" />
       <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new\meta_data" />
+      <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new" />
+      <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new\meta_data\utils" />
       <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new\predictions" />
       <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new\utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\drop\data_analysis_new" />
+      <recent name="C:\Users\doyle\Code_NKI_AI\DROP_public\scripts" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -72,7 +84,8 @@
       <workItem from="1742044465246" duration="12291000" />
       <workItem from="1742114470220" duration="27603000" />
       <workItem from="1742833662571" duration="4826000" />
-      <workItem from="1743510543739" duration="397000" />
+      <workItem from="1743510543739" duration="12737000" />
+      <workItem from="1744980368910" duration="2031000" />
     </task>
     <servers />
   </component>
@@ -80,22 +93,24 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1021" y="479" key="FileChooserDialogImpl" timestamp="1742115387422">
-      <screen x="0" y="0" width="2480" height="1440" />
+    <state x="412" y="639" key="FileChooserDialogImpl" timestamp="1743511093002">
+      <screen x="0" y="0" width="1000" height="1920" />
     </state>
     <state x="1021" y="479" key="FileChooserDialogImpl/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742115387422" />
+    <state x="412" y="639" key="FileChooserDialogImpl/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@0.0.1000.1920" timestamp="1743511093002" />
     <state x="-1186" y="447" key="com.intellij.ide.util.TipDialog" timestamp="1743510567655">
       <screen x="-1920" y="0" width="1920" height="1170" />
     </state>
     <state x="-1461" y="887" key="com.intellij.ide.util.TipDialog/-1920.612.1200.720/0.0.2480.1440@-1920.612.1200.720" timestamp="1742833685659" />
     <state x="949" y="549" key="com.intellij.ide.util.TipDialog/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742114473973" />
     <state x="-1186" y="447" key="com.intellij.ide.util.TipDialog/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@-1920.0.1920.1170" timestamp="1743510567655" />
-    <state x="-1619" y="790" width="591" height="488" key="find.popup" timestamp="1742834614570">
-      <screen x="-1920" y="612" width="1200" height="720" />
+    <state x="946" y="354" width="591" height="732" key="find.popup" timestamp="1744229523513">
+      <screen x="0" y="0" width="2480" height="1440" />
     </state>
     <state x="-1619" y="790" width="591" height="488" key="find.popup/-1920.612.1200.720/0.0.2480.1440@-1920.612.1200.720" timestamp="1742834614570" />
-    <state x="946" y="354" width="588" height="732" key="find.popup/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1742120432681" />
+    <state x="946" y="354" width="591" height="732" key="find.popup/-1920.612.1200.720/0.0.2480.1440@0.0.2480.1440" timestamp="1744229523513" />
     <state x="-1438" y="290" width="586" height="595" key="find.popup/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@-1920.0.1920.1170" timestamp="1742464197772" />
+    <state x="251" y="475" width="586" height="1302" key="find.popup/-3840.-82.1227.720/-1920.0.1920.1170/0.0.1000.1920@0.0.1000.1920" timestamp="1743672381094" />
     <state x="301" y="178" width="588" height="488" key="find.popup/0.0.1200.720@0.0.1200.720" timestamp="1742378229900" />
     <state x="833" y="383" key="scopes" timestamp="1741463826425">
       <screen x="0" y="0" width="2480" height="1440" />

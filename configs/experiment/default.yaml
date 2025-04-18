@@ -2,7 +2,7 @@
 _target_: drop.engine.experiment.Experiment
 out_dir: ${hydra:runtime.output_dir}/
 paths_cfg: ${paths}
-kfolds: 3
+kfolds: 5
 ensemble: false
 train_without_val: false
 # model

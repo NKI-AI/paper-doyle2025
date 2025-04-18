@@ -1,12 +1,12 @@
 import logging
 import numpy as np
 import pandas as pd
-from drop.data_proc.metadata_selection import prepare_precision_nki_data, select_target_data
+from drop.data_proc.metadata_selection import prepare_precision_nki_data
 from drop.data_proc.cv_split_creation import MIL_CVSplitter
 from omegaconf import DictConfig, OmegaConf
 
+def create_outer_split(df, target_var, partition_name, base_path):
 
-def create_outer_split(df, target_var, partition_name):
     cv_params = DictConfig({
         'strategy': 'GroupKFold',
         'kfolds': 5,
@@ -14,17 +14,25 @@ def create_outer_split(df, target_var, partition_name):
         'group_on': 'tissue_number_blockid'
     })
 
-    cv_splitter = MIL_CVSplitter('/home/user/tmp/', 'outer_split.json', cv_params)
-    folds_dict = cv_splitter(df)
-    folds_df = pd.DataFrame(folds_dict)
-    df= df.merge(folds_df, on=cv_params.group_on)
-    # save fold characteristics
-    from drop.data_analysis_new.analyse_data import analyse_folds
-    analyse_folds(df, cv_params.kfolds,  cv_params.stratify_on, cv_params.group_on, split_col= '', partition_name=partition_name)
+    cv_splitter = MIL_CVSplitter('/home/s.doyle/tmp/', 'outer_split.json', cv_params)
+    splits_dict = cv_splitter(df)
+    splits_df = pd.DataFrame(splits_dict)
+    df= df.merge(splits_df, on=cv_params.group_on)
+    # save outer fold characteristics
+    from drop.data_analysis_new.meta_data.analyse_splits_per_group import analyse_outer_folds
+    analyse_outer_folds(df,
+                        folds=cv_params.kfolds,
+                        stratify_on= cv_params.stratify_on,
+                        group_on=cv_params.group_on,
+                        partition_name = partition_name,
+                        use_percentages=False,
+                        base_path=base_path
+                        )
     new_columns = {str(i): f'{partition_name}{i}' for i in range(cv_params.kfolds)}
     df = df.rename(columns=new_columns)
     df = df.replace('val', 'test', regex=True)
     return df
+
 
 
 def make_project_data_csv(target_var, base_path):

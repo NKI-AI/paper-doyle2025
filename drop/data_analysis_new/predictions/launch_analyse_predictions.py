@@ -5,9 +5,8 @@ from omegaconf import DictConfig
 from pathlib import Path
 import subprocess
 
-from analyse_predictions import analyse_predictions
+from drop.data_analysis_new.predictions.analyse_predictions import analyse_predictions, prepare_analyse_predictions_test
 from drop.data_analysis_new.predictions.utils import post_process_results
-from drop.data_analysis_new.predictions.analyse_predictions import prepare_analyse_predictions_test
 
 
 @hydra.main(version_base="1.2", config_path="../../../configs/", config_name="config")

@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 from drop.data_analysis_new.predictions.utils.post_process_results import *
-
+from drop.data_analysis_new.predictions.utils.formatting_utils import *
 save_path = f"/path/to/save/"
 
 def get_results_path_all_splits(res_path, model_type, model_name, data_name, outer_splits, years):
@@ -150,7 +150,7 @@ def process_kfold_results(df, metrics: bool):
         p_value_df = process_split_wise_pvalues(df)
         df_processed = pd.merge(df_processed, p_value_df, on=["Model", "Follow-up time"])
     df_processed = format_outer_cross_results(df_processed, metrics)
-    df_processed = create_combined_mean_95ci_columns_for_metrics(df_processed)
+    df_processed = merge_mean_95ci_columns_for_metrics(df_processed)
     return df_processed
 
 def process_kfold_results_external(df, metrics: bool):
@@ -164,7 +164,7 @@ def process_kfold_results_external(df, metrics: bool):
         df_processed = pd.merge(df_processed, p_value_df, on=["Model", "Follow-up time"])
 
     df_processed = format_outer_cross_results(df_processed, metrics)
-    df_processed = create_combined_mean_95ci_columns_for_metrics(df_processed)
+    df_processed = merge_mean_95ci_columns_for_metrics(df_processed)
     return df_processed
 
 
@@ -235,7 +235,7 @@ def process_acc_results(save_path, data_name, years ):
     common_columns = metrics_table.columns.intersection(hr_table.columns)
     df = pd.merge(metrics_table, hr_table, on=list(common_columns))
     df = add_multiple_testing_results(df, metric="Hazard Ratio", p_value_col="p-value raw")
-    df_processed_metrics = create_combined_mean_95ci_columns_for_metrics(df)
+    df_processed_metrics = merge_mean_95ci_columns_for_metrics(df)
     proc_metrics_path = f"{save_path}{data_name}pooled_model_preds_cutoff_years{years}.csv"
     df_processed_metrics.astype(str).to_csv(proc_metrics_path, index=False)
 
@@ -253,7 +253,7 @@ def get_phrs(save_path, data_name, model_name):
     if "Follow-up time" not in df.columns:
         df["Follow-up time"] = years
     df = calculate_mean_and_ci_expanded(df)
-    df = create_combined_mean_95ci_columns_for_metrics(df)
+    df = merge_mean_95ci_columns_for_metrics(df)
     df.astype(str).to_csv(f"{save_path}phrs_{model_name}_{data_name}_final_kfolds_averaged_cutoff_yearsFalse.csv", index=False)
 
 if __name__ == "__main__":

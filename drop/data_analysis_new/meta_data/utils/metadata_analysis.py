@@ -1,5 +1,6 @@
 import pandas as pd
 from typing import List
+
 import numpy as np
 
 def format_sig_digits(number, sig_digits):
@@ -11,11 +12,6 @@ def get_iqr(series):
     iqr = df['75%'] - df['25%']
     return iqr
 
-def safe_round(series, decimals=2):
-    # Check if there is a series or if it is a np.NAN
-    if type(series) == pd.Series:
-        series = series.round(decimals)
-    return series
 
 def check_dfs(dfs: List, n: int, group):
     '''
@@ -32,6 +28,12 @@ def get_median_observation_time(df):
     obs_median = df['months_followup'].median()
     obs_iqr = get_iqr(df['months_followup'])
     return  obs_median, obs_iqr
+
+
+def get_total_samples(df, group: str):
+    total_samples = len(df)
+    df_out = pd.DataFrame({'var': ['total samples'], group: [total_samples]})
+    return df_out
 
 def get_deceased_stats(df, group: str):
     var = 'vital_status'
@@ -55,6 +57,7 @@ def get_deceased_stats(df, group: str):
     return df_stats
 
 def get_deceased_at_risk(df, group):
+    # todo does this now make sense??
     # we need to check vital status and
     var = 'vital_status_at_risk'
     df[var] = df.apply(
@@ -63,6 +66,13 @@ def get_deceased_at_risk(df, group):
     input = [("Deceased (No event)", df[var].sum())
              ]
     return pd.DataFrame(input, columns=["var", group])
+
+
+def safe_round(series, decimals=2):
+    # Check if there is a series or if it is a np.NAN
+    if type(series) == pd.Series:
+        series = series.round(decimals)
+    return series
 
 
 def get_follow_up_stats(df, group: str):
@@ -127,6 +137,7 @@ def get_age_slide_stats(df, group: str):
     df = df.round(2).astype(str)
 
     return df
+
 
 def get_grade_stats(df, var, group: str):
     df = df[var].value_counts().reset_index().astype(int)

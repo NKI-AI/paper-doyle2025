@@ -52,7 +52,7 @@ def analyse_predictions(model, subdirs, outer_split, years=None, **kwargs) -> No
     logged_metrics = analyse_slide_level_results(slide_df, meta_df, stage, run_path, model, ensemble=ensemble,
                                                  train_without_val=train_without_val, outer_split=outer_split,
                                                  fold=fold, survival=survival,
-                                                 analyse_her2=False, analyse_grade=False, analyse_age=False)
+                                                 )
 
 
     test_metrics = get_test_metrics(logged_metrics, model, years)
